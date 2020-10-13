@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('welcome');});
+Route::get('/CreaRecolector', function () {return view('CreaRecolector');});
+Route::get('/CreaPunto', function () {return view('CreaPuntos');});
