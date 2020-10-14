@@ -13,19 +13,20 @@
        </head>
     <body style="background-color: black;">
         <div class="container">
-            <form action="/guardaPunto" method="POST" >
+            <form action="/GuardaEdicionPunto" method="POST" >
                     @csrf
                     <br>
-                    <h1 style="color: white">Puntos de Recoleccion </h1>
+                    <h1 style="color: white"> Edicion Puntos de Recoleccion </h1>
                     <br>
                     <br>
-                    <input type="text" class="form-control" name="tipoBasura" placeholder="Tipo de Basura">
+                    <input type="hidden" name="id" value="{{$Punto->id}}">
+                    <input type="text" class="form-control" name="tipoBasura" placeholder="Tipo de Basura" value="{{$Punto->tipoBasura}}">
                     <br>
-                    <input type="text" class="form-control" name="direccion" placeholder="Direccion del Punto">
+                    <input type="text" class="form-control" name="direccion" placeholder="Direccion del Punto"  value="{{$Punto->direccion}}">
                     <br>
-                    <input type="text" class="form-control" name="Apertura" placeholder="Horario de Apertura">
+                    <input type="text" class="form-control" name="Apertura" placeholder="Horario de Apertura"  value="{{$Punto->horaApertura}}">
                     <br>
-                    <input type="text" class="form-control" name="Cierre" placeholder="Horario de Cierre">
+                    <input type="text" class="form-control" name="Cierre" placeholder="Horario de Cierre"  value="{{$Punto->horaCierre}}">
                     <br>
                    
                     <br>

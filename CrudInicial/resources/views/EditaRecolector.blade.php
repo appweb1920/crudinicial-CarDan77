@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>CreaRecolector</title>
+        <title>EditaRecolector</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -13,21 +13,20 @@
        </head>
     <body style="background-color: black;">
         <div class="container">
-            <form action="/guardaPunto" method="POST" >
+            <form action="/GuardaEdicionRecolector" method="POST" enctype="multipart/form-data">
                     @csrf
                     <br>
-                    <h1 style="color: white">Puntos de Recoleccion </h1>
+                    <h1 style="color: white"> Edita Recoletor</h1>
                     <br>
                     <br>
-                    <input type="text" class="form-control" name="tipoBasura" placeholder="Tipo de Basura">
+                    <input type="hidden" name="id" value="{{$Recolector->id}}">
+                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{$Recolector->nombre}}" >
                     <br>
-                    <input type="text" class="form-control" name="direccion" placeholder="Direccion del Punto">
-                    <br>
-                    <input type="text" class="form-control" name="Apertura" placeholder="Horario de Apertura">
-                    <br>
-                    <input type="text" class="form-control" name="Cierre" placeholder="Horario de Cierre">
-                    <br>
-                   
+                    <select class="custom-select" name="dias" >
+                        <option selected>{{$Recolector->dias}}</option>
+                        <option>Lunes-Miercoles-Viernes</option>
+                        <option>Martes-Jueves-Sabado</option>
+                    </select>
                     <br>
                     <br>
                     <input type="submit" class="btn btn-primary">

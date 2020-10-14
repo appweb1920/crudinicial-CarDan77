@@ -13,7 +13,7 @@
        </head>
     <body style="background-color: black;">
         <div class="container">
-            <form action="/guardaPastel" method="POST" enctype="multipart/form-data">
+            <form action="/guardaRecolector" method="POST" enctype="multipart/form-data">
                     @csrf
                     <br>
                     <h1 style="color: white">Recoletores </h1>

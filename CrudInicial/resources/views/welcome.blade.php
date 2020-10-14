@@ -21,8 +21,71 @@
 
             <br>
 
-            tablas con los trabajadoes y rutas  y el crud de los mismos, y boton añadir ruta
-            datos trabajador- añadir ruta-editar-borrar
+            <br>
+            <br>
+
+            <h1 style="color: white">Tabla Recolectores</h1>
+            <table class="table table-bordered table-light">
+                <thead>
+                    <tr >
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Dias de Servicio</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($recolectores as $r)
+                    <tr>
+                    <td>{{$r->id}}</td>    
+                    <td>{{$r->nombre}}</td>
+                    <td>{{$r->dias}}</td>
+                    <td><a href="/añadir/{{$r->id}}">+Añadir Ruta</a> </td>
+                    <td><a href="/edita/{{$r->id}}">Edita</a> </td>
+                    <td><a href="/borra/{{$r->id}}">Borrar</a></td>
+                   
+                    </tr>
+                    @endforeach
+                    
+                </tbody>
+            </table>
+
+            <br>
+            <br>
+
+            <h1 style="color: white">Tabla Puntos</h1>
+            <table class="table table-bordered table-light">
+                <thead>
+                    <tr >
+                        <th>ID</th>
+                        <th>Tipo de Basura</th>
+                        <th>Direccion</th>
+                        <th>Hora de Apertura</th>
+                        <th>Hora de Cierre</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($puntos as $p)
+                    <tr>
+                    <td>{{$p->id}}</td>    
+                    <td>{{$p->tipoBasura}}</td>
+                    <td>{{$p->direccion}}</td>
+                    <td>{{$p->horaApertura}}</td>
+                    <td>{{$p->horaCierre}}</td>
+                    <td><a href="/editaPunto/{{$p->id}}">Edita</a> </td>
+                    <td><a href="/borraPunto/{{$p->id}}">Borrar</a></td>
+                   
+                    </tr>
+                    @endforeach
+                    
+                </tbody>
+            </table>
+
+           
 
             el añadir ruta nos lleva a donde haremos el enlace con la otra tabla y mostraremos las rutas con el trabajador-
         </div>     
