@@ -46,4 +46,6 @@ class PuntoController extends Controller
        return redirect('/');
    }
 
+  
+
 }

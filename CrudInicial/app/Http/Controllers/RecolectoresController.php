@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Recolector;
 use App\Punto;
+use App\detalle;
 
 class RecolectoresController extends Controller
 {
@@ -21,7 +22,8 @@ class RecolectoresController extends Controller
     {
         $recolectores=Recolector::all();
         $puntos=Punto::all();
-        return view('welcome')->with('recolectores', $recolectores)->with('puntos', $puntos);;
+        $detalles=detalle::all();
+        return view('welcome')->with('recolectores', $recolectores)->with('puntos', $puntos)->with('detalles', $detalles);
 
     }
 
@@ -47,6 +49,13 @@ class RecolectoresController extends Controller
        $Recolector->delete();
 
        return redirect('/');
+   }
+
+   public function AñadirPunto($id)
+   {
+       $Recolector=Recolector::find($id);
+       $puntos=Punto::all();
+       return view('AñadirPunto')->with('Recolector',$Recolector)->with('puntos', $puntos);;
    }
 
 }

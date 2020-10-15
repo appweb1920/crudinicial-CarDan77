@@ -14,14 +14,12 @@
     <body style="background-color: black;"> 
         <div class="container">
             <h1 style="color: white">Control de Puntos de Reciclaje</h1> 
-            <br>
+            
 
             <button type="button" class="btn btn-success" onclick="location.href='/CreaRecolector'">+ Añadir Recolector</button>
             <button type="button" class="btn btn-success" onclick="location.href='/CreaPunto'">+ Añadir Punto</button>
 
-            <br>
-
-            <br>
+            
             <br>
 
             <h1 style="color: white">Tabla Recolectores</h1>
@@ -42,7 +40,7 @@
                     <td>{{$r->id}}</td>    
                     <td>{{$r->nombre}}</td>
                     <td>{{$r->dias}}</td>
-                    <td><a href="/añadir/{{$r->id}}">+Añadir Ruta</a> </td>
+                    <td><a href="/añadir/{{$r->id}}">+ Añadir Punto</a> </td>
                     <td><a href="/edita/{{$r->id}}">Edita</a> </td>
                     <td><a href="/borra/{{$r->id}}">Borrar</a></td>
                    
@@ -53,7 +51,7 @@
             </table>
 
             <br>
-            <br>
+         
 
             <h1 style="color: white">Tabla Puntos</h1>
             <table class="table table-bordered table-light">
@@ -85,10 +83,36 @@
                 </tbody>
             </table>
 
+            <br>
+            
+            <h1 style="color: white">Tabla Detalles</h1>
+            <table class="table table-bordered table-light">
+                <thead>
+                    <tr >
+                        <th>ID</th>
+                        <th>id_recolector</th>
+                        <th>id_punto</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($detalles as $d)
+                    <tr>
+                    <td>{{$d->id}}</td>    
+                    <td>{{$d->id_recolector}}</td>
+                    <td>{{$d->id_punto}}</td>
+                    <td><a href="/editadetalle/{{$d->id}}">Edita</a> </td>
+                    <td><a href="/borradetalle/{{$d->id}}">Borrar</a></td>
+                   
+                    </tr>
+                    @endforeach
+                    
+                </tbody>
+            </table>
            
 
-            el añadir ruta nos lleva a donde haremos el enlace con la otra tabla y mostraremos las rutas con el trabajador-
-        </div>     
+              </div>     
         
     </body>
 </html>
