@@ -89,21 +89,23 @@
             <table class="table table-bordered table-light">
                 <thead>
                     <tr >
-                        <th>ID</th>
-                        <th>id_recolector</th>
-                        <th>id_punto</th>
+                        
+                        <th>Recolector</th>
+                        <th>Puntos</th>
                         <th></th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($detalles as $d)
-                    <tr>
-                    <td>{{$d->id}}</td>    
-                    <td>{{$d->id_recolector}}</td>
-                    <td>{{$d->id_punto}}</td>
-                    <td><a href="/editadetalle/{{$d->id}}">Edita</a> </td>
-                    <td><a href="/borradetalle/{{$d->id}}">Borrar</a></td>
+                    @foreach ($recolectores as $r)
+                    <tr>  
+                    <td>{{$r->nombre}}</td>
+                    <td>
+                        @foreach ($r->getPuntos() as $m)
+                        {{$m->tipoBasura}} /
+                        @endforeach
+                    </td>
+                   
                    
                     </tr>
                     @endforeach

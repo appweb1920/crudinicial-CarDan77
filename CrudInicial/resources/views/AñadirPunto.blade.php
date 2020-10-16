@@ -19,12 +19,13 @@
                     <h1 style="color: white"> Añadir Puntos de Recoleccion </h1>
                     <br>
                     <br>
-                    <input type="hidden" name="id" value="{{$Recolector->id}}">
-                    <input type="text" class="form-control" name="idrecolector"  value="{{$Recolector->id}}">
+                    <input type="hidden" name="idrecolector" value="{{$Recolector->id}}">
+                    <input type="text" class="form-control" name="recolector"  value="{{$Recolector->nombre}}">
                     <br>
                     <label>id Punto</label>
+                    
                     <select class="custom-select" name="idpunto">
-                      <option selected>Selecciona id punto</option>
+                      <option selected>Selecciona  punto</option>
                       @foreach ($puntos as $p)
                       
                       <option>{{$p->id}} </option> 

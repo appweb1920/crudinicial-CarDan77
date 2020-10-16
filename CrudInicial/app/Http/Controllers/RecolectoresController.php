@@ -7,6 +7,7 @@ use App\Recolector;
 use App\Punto;
 use App\detalle;
 
+
 class RecolectoresController extends Controller
 {
     public function GuardaRecolector(Request $request)
@@ -23,7 +24,9 @@ class RecolectoresController extends Controller
         $recolectores=Recolector::all();
         $puntos=Punto::all();
         $detalles=detalle::all();
-        return view('welcome')->with('recolectores', $recolectores)->with('puntos', $puntos)->with('detalles', $detalles);
+        return view('welcome')->with('recolectores', $recolectores)->with('puntos', $puntos);
+        
+        //->with('detalles', $detalles);
 
     }
 
@@ -58,4 +61,5 @@ class RecolectoresController extends Controller
        return view('AñadirPunto')->with('Recolector',$Recolector)->with('puntos', $puntos);;
    }
 
+   
 }
