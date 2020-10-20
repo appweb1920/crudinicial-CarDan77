@@ -20,7 +20,7 @@
                     <br>
                     <br>
                     <input type="hidden" name="idrecolector" value="{{$Recolector->id}}">
-                    <input type="text" class="form-control" name="recolector"  value="{{$Recolector->nombre}}">
+                    <input type="text" class="form-control" name="recolector"  value="{{$Recolector->nombre}}" disabled>
                     <br>
                     <label>id Punto</label>
                     
@@ -28,7 +28,7 @@
                       <option selected>Selecciona  punto</option>
                       @foreach ($puntos as $p)
                       
-                      <option>{{$p->id}} </option> 
+                      <option value="{{$p->id}}" > {{$p->tipoBasura}}</option> 
                       
                       
                       @endforeach
