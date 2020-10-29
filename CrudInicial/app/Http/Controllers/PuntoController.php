@@ -15,7 +15,7 @@ class PuntoController extends Controller
         $Punto->horaApertura=$request->Apertura;
         $Punto->horaCierre=$request->Cierre;
         $Punto->save();
-        return redirect('/');
+        return redirect('/home');
 
     }
   
@@ -35,7 +35,7 @@ class PuntoController extends Controller
        $Punto->horaApertura=$request->Apertura;
        $Punto->horaCierre=$request->Cierre;
        $Punto->save();
-       return redirect('/');
+       return redirect('/home');
    }
 
    public function Borrar($id)
@@ -43,7 +43,7 @@ class PuntoController extends Controller
        $Punto=Punto::find($id);
        $Punto->delete();
 
-       return redirect('/');
+       return redirect('/home');
    }
 
   

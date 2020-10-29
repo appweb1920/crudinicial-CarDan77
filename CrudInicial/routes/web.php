@@ -13,7 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'RecolectoresController@muestra');
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'RecolectoresController@muestra')->name('home');
+
 Route::get('/CreaRecolector', function () {return view('CreaRecolector');});
 Route::get('/CreaPunto', function () {return view('CreaPuntos');});
 Route::post('/guardaRecolector', 'RecolectoresController@GuardaRecolector');

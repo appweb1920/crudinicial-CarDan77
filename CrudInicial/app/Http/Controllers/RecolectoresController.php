@@ -16,7 +16,7 @@ class RecolectoresController extends Controller
         $Recolector->nombre=$request->nombre;
         $Recolector->dias=$request->dias;
         $Recolector->save();
-        return redirect('/');
+        return redirect('/home');
 
     }
     public function muestra()
@@ -24,7 +24,7 @@ class RecolectoresController extends Controller
         $recolectores=Recolector::all();
         $puntos=Punto::all();
         $detalles=detalle::all();
-        return view('welcome')->with('recolectores', $recolectores)->with('puntos', $puntos);
+        return view('home')->with('recolectores', $recolectores)->with('puntos', $puntos);
         
         //->with('detalles', $detalles);
 
@@ -43,7 +43,7 @@ class RecolectoresController extends Controller
        $Recolector->nombre=$request->nombre;
        $Recolector->dias=$request->dias;
        $Recolector->save();
-       return redirect('/');
+       return redirect('/home');
    }
 
    public function Borrar($id)
@@ -51,7 +51,7 @@ class RecolectoresController extends Controller
        $Recolector=Recolector::find($id);
        $Recolector->delete();
 
-       return redirect('/');
+       return redirect('/home');
    }
 
    public function AñadirPunto($id)

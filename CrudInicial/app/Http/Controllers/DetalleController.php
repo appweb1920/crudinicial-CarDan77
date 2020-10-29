@@ -13,7 +13,7 @@ class DetalleController extends Controller
         $detalle->id_recolector=$request->idrecolector;
         $detalle->id_punto=$request->idpunto;
         $detalle->save();
-        return redirect('/');
+        return redirect('/home');
 
     }
 
@@ -23,6 +23,6 @@ class DetalleController extends Controller
        $detalle=detalle::find($id);
        $detalle->delete();
 
-       return redirect('/');
+       return redirect('/home');
    }
 }
