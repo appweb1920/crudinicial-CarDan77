@@ -16,12 +16,16 @@
     </head>
     <body style="background-color: black;"> 
         <div class="container">
-            <h1 style="color: white">Control de Puntos de Reciclaje</h1> 
+            <h1 style="color: white">Control de Puntos de Reciclaje</h1>
+
+            <?php
+            $user = Auth::user()->tipo ;
+            ?>
+            @if( $user == "admin")
+                <button type="button" class="btn btn-success" onclick="location.href='/CreaRecolector'">+ Añadir Recolector</button>
+                <button type="button" class="btn btn-success" onclick="location.href='/CreaPunto'">+ Añadir Punto</button>
+            @endif
             
-
-            <button type="button" class="btn btn-success" onclick="location.href='/CreaRecolector'">+ Añadir Recolector</button>
-            <button type="button" class="btn btn-success" onclick="location.href='/CreaPunto'">+ Añadir Punto</button>
-
             
             <br>
 
@@ -43,7 +47,9 @@
                     <td>{{$r->id}}</td>    
                     <td>{{$r->nombre}}</td>
                     <td>{{$r->dias}}</td>
-                    <td><a href="/añadir/{{$r->id}}">+ Añadir Punto</a> </td>
+                    @if( $user == "admin")
+                        <td><a href="/añadir/{{$r->id}}">+ Añadir Punto</a> </td>
+                    @endif
                     <td><a href="/edita/{{$r->id}}">Edita</a> </td>
                     <td><a href="/borra/{{$r->id}}">Borrar</a></td>
                    

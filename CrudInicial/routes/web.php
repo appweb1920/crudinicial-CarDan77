@@ -36,3 +36,6 @@ Route::get('/borraPunto/{id}', 'PuntoController@Borrar');
 
 Route::get('/añadir/{id}', 'RecolectoresController@AñadirPunto');
 Route::post('/GuardaDetalle', 'DetalleController@GuardaDetalle');
+
+Route::get('/adios', function () {return view('adios'); });
+
